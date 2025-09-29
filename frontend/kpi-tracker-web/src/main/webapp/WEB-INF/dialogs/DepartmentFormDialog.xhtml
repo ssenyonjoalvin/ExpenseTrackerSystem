@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<body>
+<!-- This dialog provides the popup form for adding/editing departments -->
+<p:dialog header="Department Details" widgetVar="departmentDialog" modal="true"
+          showEffect="fade" hideEffect="fade" resizable="false">
+
+    <!-- Use a separate form for the dialog to avoid conflicts -->
+    <h:form id="departmentDialogForm">
+        <p:panelGrid columns="2" styleClass="ui-noborder" style="margin-top: 10px;">
+
+            <p:outputLabel for="name" value="Department Name:"/>
+            <p:inputText id="name" value="#{departmentListView.selectedDepartment.name}"
+                         required="true" requiredMessage="Department name is required."/>
+
+            <p:outputLabel for="description" value="Description:"/>
+            <p:inputTextarea id="description" value="#{departmentListView.selectedDepartment.description}"
+                             rows="3" style="width:100%"/>
+
+            <!-- We will add the Department Lead dropdown here in a later step -->
+
+        </p:panelGrid>
+
+        <p:toolbar style="margin-top: 1rem;">
+            <p:toolbarGroup>
+                <!-- This button calls the saveDepartment method in the bean -->
+                <p:commandButton value="Save" icon="pi pi-check"
+                                 actionListener="#{departmentListView.saveDepartment()}"
+                                 update=":departmentListForm:departmentsTable :departmentListForm:growl"
+                                 oncomplete="if (!args.validationFailed) PF('departmentDialog').hide()"/>
+            </p:toolbarGroup>
+            <p:toolbarGroup align="right">
+                <p:commandButton value="Cancel" icon="pi pi-times"
+                                 onclick="PF('departmentDialog').hide()"
+                                 styleClass="ui-button-secondary" type="button"/>
+            </p:toolbarGroup>
+        </p:toolbar>
+    </h:form>
+</p:dialog>
+</body>
+</html>
