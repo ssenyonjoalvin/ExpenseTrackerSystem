@@ -3,7 +3,6 @@ package org.pahappa.systems.kpiTracker.views.department;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.pahappa.systems.kpiTracker.core.services.DepartmentService;
 import org.pahappa.systems.kpiTracker.models.department.Department;
 import org.pahappa.systems.kpiTracker.security.HyperLinks;
 import org.primefaces.PrimeFaces;

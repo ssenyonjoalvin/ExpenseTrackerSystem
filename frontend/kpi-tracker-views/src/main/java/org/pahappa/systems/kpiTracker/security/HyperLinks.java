@@ -15,5 +15,4 @@ public class HyperLinks {
     public static final String LOGIN_FORM = "/ExternalViews/Login.xhtml?faces-redirect=true";
 
     public static final String NAME_DIALOG = "/pages/registerUser/DemoDialog.xhtml";
-    public static final String DEPARTMENT_LIST_VIEW = "/pages/department/DepartmentList.xhtml?faces-redirect=true";
 }

@@ -5,6 +5,9 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/backend/kpi-tracker-models/pom.xml" />
+        <option value="$PROJECT_DIR$/backend/kpi-tracker-services/pom.xml" />
+        <option value="$PROJECT_DIR$/frontend/kpi-tracker-web/pom.xml" />
+        <option value="$PROJECT_DIR$/frontend/kpi-tracker-views/pom.xml" />
       </list>
     </option>
   </component>
